@@ -219,10 +219,17 @@ public class CSVExporter {
    * @throws IOException if any IO error occurs
    */
   private void writeCSVHeaders() throws IOException {
-    patients.write("Id,BIRTHDATE,DEATHDATE,SSN,DRIVERS,PASSPORT,"
-        + "PREFIX,FIRST,LAST,SUFFIX,MAIDEN,MARITAL,RACE,ETHNICITY,GENDER,BIRTHPLACE,"
-        + "ADDRESS,CITY,STATE,COUNTY,ZIP,LAT,LON,HEALTHCARE_EXPENSES,HEALTHCARE_COVERAGE");
+ //   patients.write("Id,BIRTHDATE,DEATHDATE,SSN,DRIVERS,PASSPORT,"
+   // + "PREFIX,FIRST,LAST,SUFFIX,MAIDEN,MARITAL,RACE,ETHNICITY,GENDER,BIRTHPLACE,"
+   // + "ADDRESS,CITY,STATE,COUNTY,ZIP,LAT,LON,HEALTHCARE_EXPENSES,HEALTHCARE_COVERAGE");
+
+// changed to remove some fields to provide basic demographic data for Covid vaccine data
+    patients.write("Id,BIRTHDATE,NHS,"
+        + "FORENAME,SURNAME,GENDER,"
+        + "ADDRESS,CITY,COUNTY,POSTCODE,TELEPHONE");
     patients.write(NEWLINE);
+
+
     allergies.write("START,STOP,PATIENT,ENCOUNTER,CODE,DESCRIPTION");
     allergies.write(NEWLINE);
     medications.write(
@@ -508,40 +515,48 @@ public class CSVExporter {
 
     StringBuilder s = new StringBuilder();
     s.append(personID).append(',');
-    s.append(dateFromTimestamp((long) person.attributes.get(Person.BIRTHDATE))).append(',');
-    if (!person.alive(time)) {
-      s.append(dateFromTimestamp((Long) person.attributes.get(Person.DEATHDATE)));
-    }
+    // removed .append(',') from the end to assist with removing deathdate
+
+    s.append(dateFromTimestamp((long) person.attributes.get(Person.BIRTHDATE)));
+  
+    // For covid vacc test data only interested in live patients , and only using demographics.
+
+  //    if (!person.alive(time)) {
+    //  s.append(dateFromTimestamp((Long) person.attributes.get(Person.DEATHDATE)));
+   // }
+    
+// reducing the data set here for the Covid Vacc tool test data 
 
     for (String attribute : new String[] {
         Person.IDENTIFIER_SSN,
-        Person.IDENTIFIER_DRIVERS,
-        Person.IDENTIFIER_PASSPORT,
-        Person.NAME_PREFIX,
+    //    Person.IDENTIFIER_DRIVERS,
+    //    Person.IDENTIFIER_PASSPORT,
+    //    Person.NAME_PREFIX,
         Person.FIRST_NAME,
         Person.LAST_NAME,
-        Person.NAME_SUFFIX,
-        Person.MAIDEN_NAME,
-        Person.MARITAL_STATUS,
-        Person.RACE,
-        Person.ETHNICITY,
+    //    Person.NAME_SUFFIX,
+    //    Person.MAIDEN_NAME,
+    //    Person.MARITAL_STATUS,
+    //    Person.RACE,
+    //    Person.ETHNICITY,
         Person.GENDER,
-        Person.BIRTHPLACE,
+    //    Person.BIRTHPLACE,
         Person.ADDRESS,
         Person.CITY,
         Person.STATE,
-        "county",
-        Person.ZIP
+       // "county",
+        Person.ZIP, 
+        Person.TELECOM
     }) {
       String value = (String) person.attributes.getOrDefault(attribute, "");
       s.append(',').append(clean(value));
     }
     // LAT,LON
-    s.append(',').append(person.getY()).append(',').append(person.getX()).append(',');
+ //   s.append(',').append(person.getY()).append(',').append(person.getX()).append(',');
     // HEALTHCARE_EXPENSES
-    s.append(person.getHealthcareExpenses()).append(',');
+  //  s.append(person.getHealthcareExpenses()).append(',');
     // HEALTHCARE_COVERAGE
-    s.append(person.getHealthcareCoverage());
+ //   s.append(person.getHealthcareCoverage());
     // QALYS
     // s.append(person.attributes.get("most-recent-qaly")).append(',');
     // DALYS
@@ -553,10 +568,13 @@ public class CSVExporter {
     return personID;
   }
 
+
+// */
   /**
    * Write a single Encounter line to encounters.csv.
    *
-   * @param rand      Source of randomness to use when generating ids etc
+ 
+    * @param rand      Source of randomness to use when generating ids etc
    * @param personID  The ID of the person that had this encounter
    * @param encounter The encounter itself
    * @return The encounter ID, to be referenced as a "foreign key" if necessary

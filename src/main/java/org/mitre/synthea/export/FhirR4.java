@@ -378,8 +378,10 @@ public class FhirR4 {
     Code mrnCode = new Code("http://terminology.hl7.org/CodeSystem/v2-0203", "MR", "Medical Record Number");
     patientResource.addIdentifier()
         .setType(mapCodeToCodeableConcept(mrnCode, "http://terminology.hl7.org/CodeSystem/v2-0203"))
-        .setSystem("http://hospital.smarthealthit.org")
-        .setValue((String) person.attributes.get(Person.ID));
+        .setSystem("https://fhir.nhs.uk/Id/nhs-number")
+
+      // changed from person.ID to   Person.IDENTIFIER_SSN to get a non uuid for an nhs number 
+        .setValue((String) person.attributes.get(Person.IDENTIFIER_SSN));
 
     Code ssnCode = new Code("http://terminology.hl7.org/CodeSystem/v2-0203", "SS", "Social Security Number");
     patientResource.addIdentifier()
@@ -557,15 +559,15 @@ public class FhirR4 {
     addrResource.addLine((String) person.attributes.get(Person.ADDRESS))
         .setCity((String) person.attributes.get(Person.CITY))
         .setPostalCode((String) person.attributes.get(Person.ZIP))
-        .setState(state);
+        .setDistrict(state);
     if (COUNTRY_CODE != null) {
       addrResource.setCountry(COUNTRY_CODE);
     }
 
     Address birthplace = new Address();
     birthplace.setCity((String) person.attributes.get(Person.BIRTH_CITY))
-        .setState((String) person.attributes.get(Person.BIRTH_STATE))
-        .setCountry((String) person.attributes.get(Person.BIRTH_COUNTRY));
+            .setDistrict((String) person.attributes.get(Person.BIRTH_STATE))
+            .setCountry((String) person.attributes.get(Person.BIRTH_COUNTRY));
 
     Extension birthplaceExtension = new Extension(
         "http://hl7.org/fhir/StructureDefinition/patient-birthPlace");
@@ -2728,7 +2730,7 @@ public class FhirR4 {
         .addLine(provider.address)
         .setCity(provider.city)
         .setPostalCode(provider.zip)
-        .setState(provider.state);
+        .setDistrict(provider.state);
     if (COUNTRY_CODE != null) {
       address.setCountry(COUNTRY_CODE);
     }
@@ -2796,7 +2798,7 @@ public class FhirR4 {
         .addLine(provider.address)
         .setCity(provider.city)
         .setPostalCode(provider.zip)
-        .setState(provider.state);
+        .setDistrict(provider.state);
     if (COUNTRY_CODE != null) {
       address.setCountry(COUNTRY_CODE);
     }
@@ -2857,7 +2859,7 @@ public class FhirR4 {
         .addLine((String) clinician.attributes.get(Clinician.ADDRESS))
         .setCity((String) clinician.attributes.get(Clinician.CITY))
         .setPostalCode((String) clinician.attributes.get(Clinician.ZIP))
-        .setState((String) clinician.attributes.get(Clinician.STATE));
+        .setDistrict((String) clinician.attributes.get(Clinician.STATE));
     if (COUNTRY_CODE != null) {
       address.setCountry(COUNTRY_CODE);
     }
