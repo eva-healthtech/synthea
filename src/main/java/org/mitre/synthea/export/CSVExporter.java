@@ -224,9 +224,9 @@ public class CSVExporter {
    // + "ADDRESS,CITY,STATE,COUNTY,ZIP,LAT,LON,HEALTHCARE_EXPENSES,HEALTHCARE_COVERAGE");
 
 // changed to remove some fields to provide basic demographic data for Covid vaccine data
-    patients.write("Id,BIRTHDATE,NHS,"
-        + "FORENAME,SURNAME,GENDER,"
-        + "ADDRESS,CITY,COUNTY,POSTCODE,TELEPHONE");
+    patients.write("patientId,dateOfBirth,nhsNumber,"
+        + "givenName,familyName,sex,"
+        + "address,city,county,postalCode,telephone");
     patients.write(NEWLINE);
 
 
@@ -526,7 +526,6 @@ public class CSVExporter {
    // }
     
 // reducing the data set here for the Covid Vacc tool test data 
-
     for (String attribute : new String[] {
         Person.IDENTIFIER_SSN,
     //    Person.IDENTIFIER_DRIVERS,
@@ -549,8 +548,22 @@ public class CSVExporter {
         Person.TELECOM
     }) {
       String value = (String) person.attributes.getOrDefault(attribute, "");
-      s.append(',').append(clean(value));
+      if (attribute == Person.GENDER){
+          if (value == "M"){
+            value = value.replaceAll("M", "male");      
+          }
+          else if (value == "F"){     
+            value = value.replaceAll("F", "female");
+          } 
+          else if (value == "UNK"){     
+            value = value.replaceAll("UNK", "unknown");
+          }           
+      }     
+      s.append(',').append(clean(value)); 
+       
     }
+    
+
     // LAT,LON
  //   s.append(',').append(person.getY()).append(',').append(person.getX()).append(',');
     // HEALTHCARE_EXPENSES
@@ -561,10 +574,9 @@ public class CSVExporter {
     // s.append(person.attributes.get("most-recent-qaly")).append(',');
     // DALYS
     // s.append(person.attributes.get("most-recent-daly"));
-
+  
     s.append(NEWLINE);
-    write(s.toString(), patients);
-
+    write(s.toString(), patients); 
     return personID;
   }
 
