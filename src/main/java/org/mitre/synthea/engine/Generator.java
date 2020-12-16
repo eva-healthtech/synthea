@@ -73,7 +73,8 @@ public class Generator implements RandomNumberGenerator {
   private boolean onlyDeadPatients;
   private boolean onlyVeterans;
   public TransitionMetrics metrics;
-  public static String DEFAULT_STATE = "Massachusetts";
+  // changed to a uk 'state' 
+  public static String DEFAULT_STATE = "Cornwall";
   private Exporter.ExporterRuntimeOptions exporterRuntimeOptions;
   private List<FixedRecordGroup> recordGroups;
 

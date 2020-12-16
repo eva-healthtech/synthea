@@ -287,7 +287,7 @@ public class FhirDstu2 {
 
     patientResource.addIdentifier()
         .setType(IdentifierTypeCodesEnum.MR)
-        .setSystem("http://hospital.smarthealthit.org")
+        .setSystem("https://fhir.nhs.uk/Id/nhs-number")
         .setValue((String) person.attributes.get(Person.ID));
 
     patientResource.addIdentifier()
@@ -417,7 +417,7 @@ public class FhirDstu2 {
     addrResource.addLine((String) person.attributes.get(Person.ADDRESS))
         .setCity((String) person.attributes.get(Person.CITY))
         .setPostalCode((String) person.attributes.get(Person.ZIP))
-        .setState(state);
+        .setDistrict(state);
     if (COUNTRY_CODE != null) {
       addrResource.setCountry(COUNTRY_CODE);
     }
@@ -439,7 +439,7 @@ public class FhirDstu2 {
 
     AddressDt birthplace = new AddressDt();
     birthplace.setCity((String) person.attributes.get(Person.BIRTH_CITY))
-            .setState((String) person.attributes.get(Person.BIRTH_STATE))
+            .setDistrict((String) person.attributes.get(Person.BIRTH_STATE))
             .setCountry((String) person.attributes.get(Person.BIRTH_COUNTRY));
 
     ExtensionDt birthplaceExtension = new ExtensionDt();
@@ -1603,7 +1603,7 @@ public class FhirDstu2 {
         .addLine(provider.address)
         .setCity(provider.city)
         .setPostalCode(provider.zip)
-        .setState(provider.state);
+        .setDistrict(provider.state);
     if (COUNTRY_CODE != null) {
       address.setCountry(COUNTRY_CODE);
     }
@@ -1641,7 +1641,7 @@ public class FhirDstu2 {
         .addLine((String) clinician.attributes.get(Clinician.ADDRESS))
         .setCity((String) clinician.attributes.get(Clinician.CITY))
         .setPostalCode((String) clinician.attributes.get(Clinician.ZIP))
-        .setState((String) clinician.attributes.get(Clinician.STATE));
+        .setDistrict((String) clinician.attributes.get(Clinician.STATE));
     if (COUNTRY_CODE != null) {
       address.setCountry(COUNTRY_CODE);
     }

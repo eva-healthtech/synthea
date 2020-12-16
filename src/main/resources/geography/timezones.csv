@@ -1,53 +1,124 @@
 STATE,ST,TIMEZONE,TZ
-Alabama,AL,Central Standard Time,CST
-Alaska,AK,Alaska Standard Time,AKST
-Arizona,AZ,Mountain Standard Time,MST
-Arkansas,AR,Central Standard Time,CST
-California,CA,Pacific Standard Time,PST
-Colorado,CO,Mountain Standard Time,MST
-Connecticut,CT,Eastern Standard Time,EST
-Delaware,DE,Eastern Standard Time,EST
-District of Columbia,DC,Eastern Standard Time,EST
-Florida,FL,Eastern Standard Time,EST
-Georgia,GA,Eastern Standard Time,EST
-Hawaii,HI,Hawaii-Aleutian Standard Time,HST
-Idaho,ID,Mountain Standard Time,MST
-Illinois,IL,Central Standard Time,CST
-Indiana,IN,Eastern Standard Time,EST
-Iowa,IA,Central Standard Time,CST
-Kansas,KS,Central Standard Time,CST
-Kentucky,KY,Central Standard Time,CST
-Louisiana,LA,Central Standard Time,CST
-Maine,ME,Eastern Standard Time,EST
-Maryland,MD,Eastern Standard Time,EST
-Massachusetts,MA,Eastern Standard Time,EST
-Michigan,MI,Eastern Standard Time,EST
-Minnesota,MN,Central Standard Time,CST
-Mississippi,MS,Central Standard Time,CST
-Missouri,MO,Central Standard Time,CST
-Montana,MT,Mountain Standard Time,MST
-Nebraska,NE,Central Standard Time,CST
-Nevada,NV,Pacific Standard Time,PST
-New Hampshire,NH,Eastern Standard Time,EST
-New Jersey,NJ,Eastern Standard Time,EST
-New Mexico,NM,Mountain Standard Time,MST
-New York,NY,Eastern Standard Time,EST
-North Carolina,NC,Eastern Standard Time,EST
-North Dakota,ND,Central Standard Time,CST
-Ohio,OH,Eastern Standard Time,EST
-Oklahoma,OK,Central Standard Time,CST
-Oregon,OR,Pacific Standard Time,PST
-Pennsylvania,PA,Eastern Standard Time,EST
-Rhode Island,RI,Eastern Standard Time,EST
-South Carolina,SC,Eastern Standard Time,EST
-South Dakota,SD,Mountain Standard Time,MST
-Tennessee,TN,Central Standard Time,CST
-Texas,TX,Central Standard Time,CST
-Utah,UT,Mountain Standard Time,MST
-Vermont,VT,Eastern Standard Time,EST
-Virginia,VA,Eastern Standard Time,EST
-Washington,WA,Pacific Standard Time,PST
-District of Columbia,DC,Eastern Standard Time,EST
-West Virginia,WV,Eastern Standard Time,EST
-Wisconsin,WI,Central Standard Time,CST
-Wyoming,WY,Mountain Standard Time,MST
+Aberdeen,AB,Greenwich Mean Time,GMT
+Blackburn,BB,Greenwich Mean Time,GMT
+Guildford,GU,Greenwich Mean Time,GMT
+Harrow,HA,Greenwich Mean Time,GMT
+Huddersfield,HD,Greenwich Mean Time,GMT
+Harrogate,HG,Greenwich Mean Time,GMT
+Hemel Hempstead,HP,Greenwich Mean Time,GMT
+Outer Hebrides,HS,Greenwich Mean Time,GMT
+Hereford,HR,Greenwich Mean Time,GMT
+Hull,HU,Greenwich Mean Time,GMT
+Halifax,HX,Greenwich Mean Time,GMT
+Ilford,IL,Greenwich Mean Time,GMT
+Ipswich,IP,Greenwich Mean Time,GMT
+Inverness,IV,Greenwich Mean Time,GMT
+Kilmarnock,KA,Greenwich Mean Time,GMT
+Cobham,KT,Greenwich Mean Time,GMT
+Kirkwall,KW,Greenwich Mean Time,GMT
+Kirkcaldy,KY,Greenwich Mean Time,GMT
+Liverpool,L1,Greenwich Mean Time,GMT
+Liverpool,L2,Greenwich Mean Time,GMT
+Liverpool,L3,Greenwich Mean Time,GMT
+Liverpool,L4,Greenwich Mean Time,GMT
+Liverpool,L5,Greenwich Mean Time,GMT
+Liverpool,L6,Greenwich Mean Time,GMT
+Liverpool,L7,Greenwich Mean Time,GMT
+Liverpool,L8,Greenwich Mean Time,GMT
+Liverpool,L9,Greenwich Mean Time,GMT
+Lancaster,LA,Greenwich Mean Time,GMT
+Llandrindod Wells,LD,Greenwich Mean Time,GMT
+Leicester,LE,Greenwich Mean Time,GMT
+Llandudno,LL,Greenwich Mean Time,GMT
+Lincoln,LN,Greenwich Mean Time,GMT
+Leeds,LS,Greenwich Mean Time,GMT
+Luton,LU,Greenwich Mean Time,GMT
+Manchester,M1,Greenwich Mean Time,GMT
+Manchester,M2,Greenwich Mean Time,GMT
+Manchester,M3,Greenwich Mean Time,GMT
+Manchester,M4,Greenwich Mean Time,GMT
+Manchester,M5,Greenwich Mean Time,GMT
+Manchester,M6,Greenwich Mean Time,GMT
+Manchester,M7,Greenwich Mean Time,GMT
+Manchester,M8,Greenwich Mean Time,GMT
+Manchester,M9,Greenwich Mean Time,GMT
+Rochester,ME,Greenwich Mean Time,GMT
+Milton Keynes,MK,Greenwich Mean Time,GMT
+Motherwell,ML,Greenwich Mean Time,GMT
+North London ,N1,Greenwich Mean Time,GMT
+North London ,N2,Greenwich Mean Time,GMT
+North London ,N3,Greenwich Mean Time,GMT
+North London ,N4,Greenwich Mean Time,GMT
+North London ,N5,Greenwich Mean Time,GMT
+North London ,N6,Greenwich Mean Time,GMT
+North London ,N7,Greenwich Mean Time,GMT
+North London ,N8,Greenwich Mean Time,GMT
+North London ,N9,Greenwich Mean Time,GMT
+Newcastle Upon Tyne,NE,Greenwich Mean Time,GMT
+Nottingham,NG,Greenwich Mean Time,GMT
+Northampton,NN,Greenwich Mean Time,GMT
+Newport,NP,Greenwich Mean Time,GMT
+Norwich,NR,Greenwich Mean Time,GMT
+North West London,NW,Greenwich Mean Time,GMT
+Oldham,OL,Greenwich Mean Time,GMT
+Oxford,OX,Greenwich Mean Time,GMT
+Paisley,PA,Greenwich Mean Time,GMT
+Peterborough,PE,Greenwich Mean Time,GMT
+Perth,PH,Greenwich Mean Time,GMT
+Plymouth,PL,Greenwich Mean Time,GMT
+Portsmouth,PO,Greenwich Mean Time,GMT
+Preston,PR,Greenwich Mean Time,GMT
+Reading,RG,Greenwich Mean Time,GMT
+Redhill,RH,Greenwich Mean Time,GMT
+Romford,RM,Greenwich Mean Time,GMT
+Sheffield,S1,Greenwich Mean Time,GMT
+Sheffield,S2,Greenwich Mean Time,GMT
+Sheffield,S3,Greenwich Mean Time,GMT
+Sheffield,S4,Greenwich Mean Time,GMT
+Sheffield,S5,Greenwich Mean Time,GMT
+Sheffield,S6,Greenwich Mean Time,GMT
+Sheffield,S7,Greenwich Mean Time,GMT
+Sheffield,S8,Greenwich Mean Time,GMT
+Sheffield,S9,Greenwich Mean Time,GMT
+Swansea,SA,Greenwich Mean Time,GMT
+South East London,SE,Greenwich Mean Time,GMT
+Stevenage,SG,Greenwich Mean Time,GMT
+Stockport,SK,Greenwich Mean Time,GMT
+Slough,SL,Greenwich Mean Time,GMT
+Sutton,SM,Greenwich Mean Time,GMT
+Swindon,SN,Greenwich Mean Time,GMT
+Southampton,SO,Greenwich Mean Time,GMT
+Salisbury,SP,Greenwich Mean Time,GMT
+Sunderland,SR,Greenwich Mean Time,GMT
+Southend-on-Sea,SS,Greenwich Mean Time,GMT
+Stoke-on-Trent,ST,Greenwich Mean Time,GMT
+South West London,SW,Greenwich Mean Time,GMT
+Shrewsbury,SY,Greenwich Mean Time,GMT
+Taunton,TA,Greenwich Mean Time,GMT
+Galashiels,TD,Greenwich Mean Time,GMT
+Telford,TF,Greenwich Mean Time,GMT
+Tonbridge,TN,Greenwich Mean Time,GMT
+Torquay,TQ,Greenwich Mean Time,GMT
+Truro,TR,Greenwich Mean Time,GMT
+Cleveland,TS,Greenwich Mean Time,GMT
+Twickenham,TW,Greenwich Mean Time,GMT
+Southall,UB,Greenwich Mean Time,GMT
+West London ,W1,Greenwich Mean Time,GMT
+West London ,W2,Greenwich Mean Time,GMT
+West London ,W3,Greenwich Mean Time,GMT
+West London ,W4,Greenwich Mean Time,GMT
+West London ,W5,Greenwich Mean Time,GMT
+West London ,W6,Greenwich Mean Time,GMT
+West London ,W7,Greenwich Mean Time,GMT
+West London ,W8,Greenwich Mean Time,GMT
+West London ,W9,Greenwich Mean Time,GMT
+Warrington,WA,Greenwich Mean Time,GMT
+West Central London,WC,Greenwich Mean Time,GMT
+Watford,WD,Greenwich Mean Time,GMT
+Wakefield,WF,Greenwich Mean Time,GMT
+Wigan,WN,Greenwich Mean Time,GMT
+Worcester,WR,Greenwich Mean Time,GMT
+Walsall,WS,Greenwich Mean Time,GMT
+Wolverhampton,WV,Greenwich Mean Time,GMT
+York,YO,Greenwich Mean Time,GMT
+Lerwick,ZE,Greenwich Mean Time,GMT

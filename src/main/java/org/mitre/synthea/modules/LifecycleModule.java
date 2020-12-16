@@ -170,8 +170,10 @@ public final class LifecycleModule extends Module {
       attributes.put(Person.MULTIPLE_BIRTH_STATUS, person.randInt(3) + 1);
     }
 
-    String phoneNumber = "555-" + ((person.randInt(999 - 100 + 1) + 100)) + "-"
-        + ((person.randInt(9999 - 1000 + 1) + 1000));
+    // changed to a uk format telephone number
+    
+    String phoneNumber = "(01" + ((person.randInt(999 - 100 + 1) + 100)) + ")"
+        + ((person.randInt(999999 - 100000 + 1) + 100000));
     attributes.put(Person.TELECOM, phoneNumber);
 
     boolean hasStreetAddress2 = person.rand() < 0.5;
@@ -184,8 +186,10 @@ public final class LifecycleModule extends Module {
       attributes.putAll(fr.getFixedRecordAttributes());
     }
 
-    String ssn = "999-" + ((person.randInt(99 - 10 + 1) + 10)) + "-"
-        + ((person.randInt(9999 - 1000 + 1) + 1000));
+    // changed to generate a 10 digit number as we are using the SSN as the NHS number for UK patients
+
+    String ssn = ((person.randInt(99999 - 10000 + 1) + 10000)) + ""
+        + ((person.randInt(99999 - 10000 + 1) + 10000));
     attributes.put(Person.IDENTIFIER_SSN, ssn);
 
     String city = (String) attributes.get(Person.CITY);
